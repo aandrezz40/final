@@ -9,16 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>Registrar Producto</h2>
 
         <!-- Formulario de creación de proveedor y categoría -->
         <article class="links">
-            <a href="{{route('proveedor')}}" class="link-item">
-                <h2>Crear proveedor</h2>
-            </a>
-            <a href="{{route('categoria')}}" class="link-item">
-                <h2>Crear categoría</h2>
-            </a>
+            <h2 class="title">Registrar Producto</h2>
+            <div>
+                <a href="{{route('proveedor')}}" class="link-proveedor">
+                    <h2>Crear proveedor</h2>
+                </a>
+                <a href="{{route('categoria')}}" class="link-categoria">
+                    <h2>Crear categoría</h2>
+                </a>
+            </div>
         </article>
         
         <!-- Formulario para registrar un producto -->
@@ -34,11 +36,15 @@
                 <input type="number" name="stock" placeholder="Stock" class="form-control" required>
             </div>
             <select name="category_id" class="form-control" required>
+                <option value="">Seleccionar categoria</option>
+
                 @foreach ($categorys as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
             <select name="provider_id" class="form-control" required>
+                <option value="">Seleccionar proveedor</option>
+
                 @foreach ($providers as $provider)
                     <option value="{{$provider->id}}">{{$provider->name}}</option>
                 @endforeach
@@ -46,10 +52,10 @@
             <button type="submit" class="btn-submit">Guardar</button>
         </form>
 
-        <hr>
+        
 
         <!-- Tabla de productos -->
-        <h2>Productos Registrados</h2>
+        <h2 class="titleTable">Productos Registrados</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
