@@ -17,14 +17,14 @@
     </header>
 
     <main>
-        <form action="{{route('agregarProveedorr')}}" method="post">
+        <form action="{{route('agregarProveedor')}}" method="post">
             @csrf
             <input type="text" name="name" placeholder="Nombre del proveedor" required>
             <input type="text" name="direction" placeholder="Dirección del proveedor" required>
             <input type="text" name="phone" placeholder="Teléfono del proveedor" required>
             <input type="email" name="email" placeholder="Correo del proveedor" required>
             <input type="text" name="contact" placeholder="Contacto del proveedor" required>
-            <input type="text" name="description" placeholder="Descripción del proveedor" required>
+            <textarea name="description" id="" cols="65" rows="10" value="Ingrese la descripcion del proveedor"></textarea>
             <input type="submit" value="Registrar proveedor">
         </form>
 
@@ -54,7 +54,7 @@
                         <td>{{$provider->contact}}</td>
                         <td>{{$provider->description}}</td>
                         <td>
-                            <a href="{{route('editarProveedor', $provider->id)}}" class="btn-edit">Editar</a>
+                            <a href="{{route('editarProveedorView', $provider->id)}}" class="btn-edit">Editar</a>
                         </td>
                         <td>
                             <a href="{{route('eliminarProveedor', $provider->id)}}" class="btn-delete">Eliminar</a>

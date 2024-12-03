@@ -1,0 +1,71 @@
+/* Estilo General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Azul claro suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor Principal */
+div {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+section h2 {
+    text-align: center;
+    color: #4A90E2; /* Azul frío */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select,
+form input[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Selectores */
+form select {
+    background-color: #f7f9fc;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* Botón de Enviar */
+form input[type="submit"] {
+    background-color: #4A90E2; /* Azul frío */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #357ab7; /* Azul más oscuro */
+}

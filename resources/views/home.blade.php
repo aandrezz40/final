@@ -27,22 +27,22 @@
         <form action="{{route('agregarProducto')}}" method="POST" class="product-form">
             @csrf
             <div class="mb-3">
-                <input type="text" name="producto" placeholder="Producto" class="form-control" required>
+                <input type="text" name="product" placeholder="Producto" class="form-control" required>
             </div>
             <div class="mb-3">
-                <input type="number" name="precio" placeholder="Precio" class="form-control" required>
+                <input type="number" name="price" placeholder="Precio" class="form-control" required>
             </div>
             <div class="mb-3">
                 <input type="number" name="stock" placeholder="Stock" class="form-control" required>
             </div>
-            <select name="category_id" class="form-control" required>
+            <select name="id_categoria" class="form-control" required>
                 <option value="">Seleccionar categoria</option>
 
                 @foreach ($categorys as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
-            <select name="provider_id" class="form-control" required>
+            <select name="id_proveedor" class="form-control" required>
                 <option value="">Seleccionar proveedor</option>
 
                 @foreach ($providers as $provider)

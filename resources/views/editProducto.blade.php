@@ -4,47 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    
+    <link rel="stylesheet" href="{{ asset('css/editProducto.css') }}">
 </head>
 <body>
-<div class="">
+<div>
     <section>
         <h2>Actualizar producto</h2>
-
     </section>
 
     <!-- Formulario -->
-    
-    
-    <form action="{{route('agregarProducto')}}" method="POST">
+    <form action="{{route('editarProducto', $products->id)}}" method="POST">
         @csrf
-        <div class="mb-3">
-            <input type="text" name="producto" placeholder="Producto" class="" required>
-        </div>
-        <div class="mb-3">
-            <input type="number" name="precio" placeholder="Precio" class="" required>
-        </div>
-        <div class="mb-3">
-            <input type="number" name="stock" placeholder="Stock" class="" required>
-        </div>
-        <select name="" id="">
+        <input type="hidden" value="{{$products->id}}">
+        <input type="text" name="product" placeholder="Producto" value="{{$products->product}}" required>
+        <input type="number" name="price" placeholder="Precio" value="{{$products->price}}" required>
+        <input type="number" name="stock" placeholder="Stock" value="{{$products->stock}}" required>
+        
+        <select name="id_categoria" required>
             @foreach ($categorys as $category)
-                <option value="{{$category->id}}" disabled>{{$category->name}}</option>
-                
+                <option value="{{$category->id}}" {{ $category->id == $products->category_id ? 'selected' : '' }}>
+                    {{$category->name}}
+                </option>
             @endforeach
         </select>
-        <select name="" id="">
+        
+        <select name="id_proveedor" required>
             @foreach ($providers as $provider)
-                <option value="{{$provider->id}}" disabled>{{$provider->name}}</option>
-                
+                <option value="{{$provider->id}}" {{ $provider->id == $products->provider_id ? 'selected' : '' }}>
+                    {{$provider->name}}
+                </option>
             @endforeach
         </select>
-        <button type="submit" class="">Guardar</button>
+        
+        <input type="submit" value="Actualizar producto">
     </form>
-
-
-    <!-- Tabla -->
-    
 </div>
 </body>
 </html>

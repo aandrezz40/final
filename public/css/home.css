@@ -64,7 +64,7 @@ body{
 
 form{
     width: 50%;
-    height: 100px;
+    height: 150px;
     background-color: white;
     margin-top: 20px;
     display: flex;
@@ -91,6 +91,7 @@ button{
     color: white;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .titleTable{
@@ -129,9 +130,6 @@ td a {
     font-weight: bold;
 }
 
-td a:hover {
-    color: #357ab7;
-}
 
 /* Botones de acción */
 .btn-edit, .btn-delete {
@@ -146,14 +144,9 @@ td a:hover {
     background-color: #4A90E2; /* Azul frío */
 }
 
-.btn-edit:hover {
-    background-color: #357ab7;
-}
+
 
 .btn-delete {
     background-color: #e74c3c; /* Rojo cálido */
 }
 
-.btn-delete:hover {
-    background-color: #c0392b;
-}

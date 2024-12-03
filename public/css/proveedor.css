@@ -79,7 +79,7 @@ main form input[type="submit"]:hover {
 /* Lista de proveedores */
 .provider-list {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin-top: 40px;
     background-color: #ffffff;
     padding: 20px;
@@ -104,14 +104,12 @@ main form input[type="submit"]:hover {
 }
 
 .provider-list td a {
-    color: #4A90E2; /* Azul frío */
+    color: white; /* Azul frío */
     text-decoration: none;
     font-weight: bold;
 }
 
-.provider-list td a:hover {
-    color: #357ab7; /* Azul más oscuro */
-}
+
 
 /* Botones de acción */
 .btn-edit,
@@ -125,17 +123,15 @@ main form input[type="submit"]:hover {
 
 .btn-edit {
     background-color: #4A90E2; /* Azul frío */
+    color: white;
 }
 
-.btn-edit:hover {
-    background-color: #357ab7; /* Azul más oscuro */
-}
+
 
 .btn-delete {
     background-color: #e74c3c; /* Rojo cálido */
 }
 
-.btn-delete:hover {
-    background-color: #c0392b; /* Rojo más oscuro */
+.btn-edit , .btn-delete :hover{
+    scale: 1.2;
 }
-

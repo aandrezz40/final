@@ -13,20 +13,23 @@ Route::get('/', function () {
 
 Route::get('/home',[ProductoController::class,'home'])->name('home');
 Route::post('/home',[ProductoController::class,'createProducto'])->name('agregarProducto');
-Route::get('/home/edit{id}',[ProductoController::class,'updateProducto'])->name('editarProducto');
+Route::get('/home/edit/{id}',[ProductoController::class,'updateProductoView'])->name('editarProductoView');
+Route::post('/home/edit/{id}',[ProductoController::class,'updateProducto'])->name('editarProducto');
 Route::get('/home/delete/{id}',[ProductoController::class,'destroyProducto'])->name('eliminarProducto');
 
 //Controlador de proveedor
 Route::get('/proveedor',[ProveedorController::class,'index'])->name('proveedor');
-Route::post('/proveedor',[ProveedorController::class,'createProveedor'])->name('agregarProveedorr');
-Route::get('/proveedor/edit{id}',[ProveedorController::class,'updateProveedor'])->name('editarProveedor');
+Route::post('/proveedor',[ProveedorController::class,'createProveedor'])->name('agregarProveedor');
+Route::get('/proveedor/edit/{id}',[ProveedorController::class,'updateProveedorView'])->name('editarProveedorView');
+Route::post('/proveedor/edit/{id}',[ProveedorController::class,'updateProveedor'])->name('editarProveedor');
 Route::get('/proveedor/delete/{id}',[ProveedorController::class,'deleteProveedor'])->name('eliminarProveedor');
 
 
 //Controlador de categoria
-Route::get('/categoria',[CategoriaController::class,'index'])->name('categoria');
-Route::post('/categoria',[CategoriaController::class,'createCategory'])->name('createCategory');
-Route::get('/categoria/edit{id}',[CategoriaController::class,'setCategory'])->name('editarCategoria');
+Route::get('categoria',[CategoriaController::class,'index'])->name('categoria');
+Route::post('/categoria',[CategoriaController::class,'createCategory'])->name('crearCategoria');
+Route::get('/categoria/edit/{id}',[CategoriaController::class,'updateCategoryView'])->name('editarCategoriaView');
+Route::post('/categoria/edit/{id}',[CategoriaController::class,'updateCategory'])->name('editarCategoria');
 Route::get('/categoria/delete/{id}',[CategoriaController::class,'deleteCategory'])->name('eliminarCategoria');
 
 Route::get('/dashboard', function () {
