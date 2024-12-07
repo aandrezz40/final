@@ -16,9 +16,14 @@ div {
     width: 100%;
     max-width: 600px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más profunda */
+    transition: transform 0.3s ease-in-out;
+}
+
+div:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
 }
 
 /* Título */
@@ -26,7 +31,8 @@ section h2 {
     text-align: center;
     color: #4A90E2; /* Azul frío */
     margin-bottom: 20px;
-    font-size: 1.8rem;
+    font-size: 2rem; /* Un poco más grande */
+    font-weight: 600; /* Peso de fuente más fuerte */
 }
 
 /* Formulario */
@@ -35,25 +41,36 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* Espacio adicional entre elementos */
 }
 
+/* Entradas y Selectores */
 form input[type="text"],
 form input[type="number"],
 form select,
 form input[type="submit"] {
     width: 90%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px; /* Bordes más suaves */
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Selectores */
+/* Área de selección */
 form select {
     background-color: #f7f9fc;
     color: #333;
     border: 1px solid #ddd;
+}
+
+/* Efecto en el foco de los campos */
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #4A90E2; /* Resalte azul en foco */
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+    outline: none;
 }
 
 /* Botón de Enviar */
@@ -63,9 +80,13 @@ form input[type="submit"] {
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem; /* Un poco más grande */
+    text-transform: uppercase; /* Mayúsculas para el botón */
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form input[type="submit"]:hover {
     background-color: #357ab7; /* Azul más oscuro */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }

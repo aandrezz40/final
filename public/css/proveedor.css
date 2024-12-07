@@ -1,7 +1,7 @@
 /* Estilo general del cuerpo */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fa; /* Fondo gris claro */
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f0fe; /* Fondo azul muy claro */
     color: #333;
     margin: 0;
     padding: 0;
@@ -15,65 +15,93 @@ body {
 /* Cabecera */
 header {
     width: 100%;
-    background-color: #4A90E2; /* Azul frío */
+    background-color: #6c63ff; /* Azul vibrante */
     color: white;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 header h2 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 /* Enlace de la cabecera */
 .header-link {
     color: white;
-    text-decoration: none;
-    display: block;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: inline-block;
 }
-main{
+
+.header-link:hover {
+    color: #c4c9ff; /* Azul más claro */
+}
+
+/* Contenido principal */
+main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    padding: 20px;
 }
+
 /* Formulario */
 main form {
     width: 100%;
     max-width: 500px;
-    background-color: #ffffff; 
-    /* Fondo blanco */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+main form:hover {
+    transform: translateY(-5px);
 }
 
 main form input[type="text"],
 main form input[type="email"],
 main form input[type="submit"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
     font-size: 1rem;
     box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+main form input[type="text"]:focus,
+main form input[type="email"]:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
 }
 
 main form input[type="submit"] {
-    background-color: #4A90E2; /* Azul frío */
+    background-color: #6c63ff;
     color: white;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 main form input[type="submit"]:hover {
-    background-color: #357ab7; /* Azul más oscuro */
+    background-color: #574ccf;
+    transform: scale(1.05);
 }
 
 /* Lista de proveedores */
@@ -82,9 +110,9 @@ main form input[type="submit"]:hover {
     max-width: 1000px;
     margin-top: 40px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .provider-list table {
@@ -93,45 +121,59 @@ main form input[type="submit"]:hover {
 }
 
 .provider-list th, .provider-list td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1rem;
 }
 
 .provider-list th {
-    background-color: #4A90E2; /* Azul frío */
+    background-color: #6c63ff;
     color: white;
-}
-
-.provider-list td a {
-    color: white; /* Azul frío */
-    text-decoration: none;
     font-weight: bold;
 }
 
+.provider-list td {
+    background-color: #fafafa;
+}
 
+.provider-list td a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.provider-list td a:hover {
+    color: #574ccf;
+    transform: scale(1.1);
+}
 
 /* Botones de acción */
 .btn-edit,
 .btn-delete {
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    border-radius: 8px;
     color: white;
     text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-edit {
-    background-color: #4A90E2; /* Azul frío */
-    color: white;
+    background-color: #6c63ff;
 }
-
-
 
 .btn-delete {
-    background-color: #e74c3c; /* Rojo cálido */
+    background-color: #ff6b6b;
 }
 
-.btn-edit , .btn-delete :hover{
-    scale: 1.2;
+.btn-edit:hover {
+    background-color: #574ccf;
+    transform: scale(1.1);
+}
+
+.btn-delete:hover {
+    background-color: #e55757;
+    transform: scale(1.1);
 }

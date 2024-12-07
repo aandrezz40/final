@@ -1,7 +1,7 @@
 /* Estilo general */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #eef2f5; /* Azul claro */
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+    background-color: #f3f7fc; /* Fondo azul muy claro */
     color: #333;
     margin: 0;
     padding: 0;
@@ -13,51 +13,70 @@ body {
 
 /* Contenedor de formulario y tabla */
 form, table {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     width: 90%;
     max-width: 800px;
     margin: 20px 0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    transition: transform 0.2s ease;
 }
-form{
+
+form:hover, 
+table:hover {
+    transform: translateY(-5px); /* Animación al pasar el mouse */
+}
+
+/* Títulos */
+.titulo {
+    color: #4A90E2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* Títulos */
-.titulo {
-    color: #4A90E2; /* Azul frío */
-    text-align: center;
-    text-decoration: none;
-}
-
-/* Formulario */
 form input[type="text"], 
 form textarea, 
 form input[type="submit"] {
     width: 90%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus, 
+form textarea:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
 }
 
 /* Botón de enviar */
 form input[type="submit"] {
-    background-color: #4A90E2; /* Azul frío */
+    background-color: #4A90E2;
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form input[type="submit"]:hover {
-    background-color: #357ab7; /* Azul más oscuro */
+    background-color: #357ab7;
+    transform: scale(1.05);
 }
 
 /* Tabla */
@@ -68,22 +87,24 @@ table {
 }
 
 table thead {
-    background-color: #4A90E2; /* Azul frío */
+    background-color: #4A90E2;
     color: #ffffff;
 }
 
 table th, 
 table td {
-    padding: 10px;
+    padding: 15px; /* Espaciado más generoso */
     border: 1px solid #ddd;
+    font-size: 1rem;
 }
 
 table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #f8f9fb; /* Fondo alternativo */
 }
 
 table tbody tr:hover {
-    background-color: #e6f0fa; /* Azul muy claro */
+    background-color: #eaf3fc; /* Azul claro */
+    transition: background-color 0.3s ease;
 }
 
 /* Enlaces en la tabla */
@@ -91,26 +112,41 @@ table a {
     text-decoration: none;
     color: #4A90E2;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 table a:hover {
     color: #357ab7;
+    transform: scale(1.1); /* Enfoque visual en hover */
 }
 
 /* Enlace del título */
 .btn-primary {
     text-decoration: none;
     color: #4A90E2;
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
     margin-bottom: 20px;
     display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-warning{
+.btn-primary:hover {
+    color: #357ab7;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
     text-decoration: none;
-    color: #df2f2f;
-    font-size: 1rem;
+    color: #e74c3c; /* Rojo cálido */
+    font-weight: bold;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    display: inline-block;  
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+    color: #c0392b;
+    transform: translateY(-2px);
 }

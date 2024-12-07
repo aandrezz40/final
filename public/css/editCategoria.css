@@ -1,6 +1,6 @@
 /* Estilo general */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
     background-color: #f0f4f8; /* Azul claro suave */
     color: #333;
     margin: 0;
@@ -20,39 +20,56 @@ section {
 
 section h2 {
     color: #4A90E2; /* Azul frío */
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
 }
 
 /* Formulario */
 form {
     background-color: #ffffff; /* Fondo blanco */
-    padding: 20px;
+    padding: 25px;
     width: 100%;
     max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Bordes más suaves */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más marcada */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Espaciado mayor entre elementos */
+    transition: transform 0.3s ease;
 }
 
+form:hover {
+    transform: translateY(-5px); /* Ligera elevación al pasar el mouse */
+}
+
+/* Entradas de texto y área de texto */
 form input[type="text"],
 form textarea,
 form input[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px; /* Bordes más redondeados */
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #4A90E2; /* Resalte azul en foco */
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
+    outline: none;
 }
 
 /* Área de texto */
 form textarea {
     resize: none;
-    height: 100px;
+    height: 120px; /* Más espacio para escribir */
 }
 
 /* Botón de enviar */
@@ -62,9 +79,13 @@ form input[type="submit"] {
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form input[type="submit"]:hover {
     background-color: #357ab7; /* Azul más oscuro */
+    transform: scale(1.05); /* Ligera expansión en hover */
 }
